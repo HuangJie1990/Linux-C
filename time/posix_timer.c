@@ -46,6 +46,12 @@ int main() {
                     return ret;
                 }
                 break;
+            case 'I':
+                ret = +posix_timer_info(&timerHandle);
+                if (ret) {
+                    return ret;
+                }
+                break;
             case 'E':
                 ret = +posix_timer_delete(&timerHandle);
                 return ret;

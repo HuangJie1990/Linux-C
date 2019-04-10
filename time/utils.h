@@ -36,6 +36,8 @@ int posix_timer_stop(Timer_handle *handle);
 
 int posix_timer_delete(Timer_handle *handle);
 
+int posix_timer_info(Timer_handle *handle);
+
 #ifdef __cpluscplus
 }
 #endif

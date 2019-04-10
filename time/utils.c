@@ -105,4 +105,18 @@ int posix_timer_delete(Timer_handle *handle) {
     return ret;
 }
 
+int posix_timer_info(Timer_handle *handle) {
+    int ret = -1;
+    
+    struct itimerspec value;
+    ret = timer_gettime(handle->timer_id, &value);
+    if(!ret)
+    {
+        printf("current sec = %ld, nsec = %ld\n", value.it_value.tv_sec, value.it_value.tv_nsec);
+        printf("next sec = %ld, nsec = %ld\n", value.it_interval.tv_sec, value.it_interval.tv_nsec);
+    }
+
+    return ret;
+}
+
 Timer_handle timerHandle;
