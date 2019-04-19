@@ -6,16 +6,5 @@
 #include <stdlib.h>
 
 int main(int argc, const char *argv[]) {
-    char buf[2];
-    int ascii;
-
-    while (fgets(buf, 2, stdin)) {
-        ascii = atoi(buf);
-        printf("The ascii code of character %s is %d\n", buf, ascii);
-    }
-
-    if (feof(stdin)) {
-        printf("End of file\n");
-    }
-    exit(EXIT_SUCCESS);
+    printf("%d", '\,');
 }
